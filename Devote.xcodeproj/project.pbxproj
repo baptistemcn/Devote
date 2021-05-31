@@ -62,15 +62,15 @@
 		47C1D018266571AE0035477A /* Devote */ = {
 			isa = PBXGroup;
 			children = (
-				47C1D02D266572FC0035477A /* sound-ding.mp3 */,
-				47C1D02E266572FC0035477A /* sound-rise.mp3 */,
-				47C1D02F266572FC0035477A /* sound-tap.mp3 */,
-				47C1D019266571AE0035477A /* DevoteApp.swift */,
-				47C1D01B266571AE0035477A /* ContentView.swift */,
+				47C1D0352665741F0035477A /* Extension */,
+				47C1D038266574430035477A /* Model */,
+				47C1D0332665740D0035477A /* Sound */,
+				47C1D037266574350035477A /* Style */,
+				47C1D036266574250035477A /* Utility */,
+				47C1D034266574150035477A /* View */,
 				47C1D01D266571AF0035477A /* Assets.xcassets */,
-				47C1D022266571AF0035477A /* Persistence.swift */,
+				47C1D019266571AE0035477A /* DevoteApp.swift */,
 				47C1D027266571AF0035477A /* Info.plist */,
-				47C1D024266571AF0035477A /* Devote.xcdatamodeld */,
 				47C1D01F266571AF0035477A /* Preview Content */,
 			);
 			path = Devote;
@@ -82,6 +82,54 @@
 				47C1D020266571AF0035477A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47C1D0332665740D0035477A /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				47C1D02D266572FC0035477A /* sound-ding.mp3 */,
+				47C1D02E266572FC0035477A /* sound-rise.mp3 */,
+				47C1D02F266572FC0035477A /* sound-tap.mp3 */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		47C1D034266574150035477A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47C1D01B266571AE0035477A /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		47C1D0352665741F0035477A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		47C1D036266574250035477A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		47C1D037266574350035477A /* Style */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		47C1D038266574430035477A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				47C1D022266571AF0035477A /* Persistence.swift */,
+				47C1D024266571AF0035477A /* Devote.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
