@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		470A5BAF26683A3500443BDA /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470A5BAE26683A3500443BDA /* BackgroundImageView.swift */; };
 		4754FC982667B2DC00C0C39A /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4754FC972667B2DC00C0C39A /* HideKeyboardExtension.swift */; };
 		47C1D01A266571AE0035477A /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1D019266571AE0035477A /* DevoteApp.swift */; };
 		47C1D01C266571AE0035477A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C1D01B266571AE0035477A /* ContentView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		470A5BAE26683A3500443BDA /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		4754FC972667B2DC00C0C39A /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 		47C1D016266571AE0035477A /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47C1D019266571AE0035477A /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				47C1D01B266571AE0035477A /* ContentView.swift */,
+				470A5BAE26683A3500443BDA /* BackgroundImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47C1D023266571AF0035477A /* Persistence.swift in Sources */,
+				470A5BAF26683A3500443BDA /* BackgroundImageView.swift in Sources */,
 				47C1D01C266571AE0035477A /* ContentView.swift in Sources */,
 				4754FC982667B2DC00C0C39A /* HideKeyboardExtension.swift in Sources */,
 				47C1D04326676F060035477A /* Constant.swift in Sources */,
