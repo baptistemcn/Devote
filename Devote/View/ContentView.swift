@@ -12,10 +12,7 @@ struct ContentView: View {
     
     // MARK: - PROPERTIES
     @State var task: String = ""
-    
-    private var isButtonDisable: Bool {
-        task.isEmpty
-    }
+    @State private var showNewtaskItem: Bool = false
     
     // FETCH DATA
     @Environment(\.managedObjectContext) private var viewContext
@@ -26,24 +23,6 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     // MARK: - FUNCTION
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.task = task
-            newItem.completion = false
-            newItem.id = UUID()
-            
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-            task = ""
-            hideKeyboard()
-        }
-    }
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
@@ -62,28 +41,31 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                // MARK: - MAIN VIEW
                 VStack {
-                    VStack(spacing: 16) {
-                        TextField("New Task", text: $task)
-                            .padding()
-                            .background(Color(UIColor.systemGray6))
-                            .cornerRadius(10)
-                        
-                        Button(action: {
-                            addItem()
-                        }, label: {
-                            Spacer()
-                            Text("SAVE")
-                            Spacer()
-                        })
-                        .disabled(isButtonDisable)
-                        .padding()
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .background(isButtonDisable ? Color.gray : Color.pink)
-                        .cornerRadius(10)
-                    } //: VSTACK
-                    .padding()
+                    // MARK: - HEADER
+                    Spacer(minLength: 80)
+                    
+                    // MARK: - NEW TASK BUTTON
+                    Button(action: {
+                        showNewtaskItem = true
+                    }, label: {
+                        Image(systemName: "plus.circle")
+                            .font(.system(size: 30, weight: .semibold, design: .rounded))
+                        Text("New Task".uppercased())
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                    })
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 15)
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [Color.pink, Color.blue]), startPoint: .leading, endPoint: .trailing)
+                            .clipShape(Capsule())
+                    )
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0.0, y: 4.0)
+                    
+                    
+                    // MARK: - TASKS
                     List {
                         ForEach(items) { item in
                             VStack(alignment: .leading) {
@@ -103,6 +85,16 @@ struct ContentView: View {
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
                 } //: VSTACK
+                
+                // MARK: - NEW TASK ITEM
+                if showNewtaskItem {
+                    BlankView()
+                        .onTapGesture {
+                            showNewtaskItem = false
+                        }
+                    NewTaskItemView(isShowing: $showNewtaskItem)
+                }
+                
             } //: ZSTACK
             .onAppear() {
                 UITableView.appearance().backgroundColor = UIColor.clear
