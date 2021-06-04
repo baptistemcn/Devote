@@ -21,3 +21,5 @@ var backgroundGrient: LinearGradient {
 }
 
 // MARK: - UX
+
+let feedback = UINotificationFeedbackGenerator()
