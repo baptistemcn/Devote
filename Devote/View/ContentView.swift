@@ -11,8 +11,11 @@ import CoreData
 struct ContentView: View {
     
     // MARK: - PROPERTIES
+    
+    // App Storage
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
+    // State
     @State var task: String = ""
     @State private var showNewtaskItem: Bool = false
     
@@ -112,7 +115,10 @@ struct ContentView: View {
                 
                 // MARK: - NEW TASK ITEM
                 if showNewtaskItem {
-                    BlankView()
+                    BlankView(
+                        backgroudColor: isDarkMode ? Color.black : Color.gray,
+                        backgroundOpacity: isDarkMode ? 0.3 : 0.5 
+                    )
                         .onTapGesture {
                             showNewtaskItem = false
                         }
