@@ -142,7 +142,7 @@ struct ContentView: View {
                 BackgroundImageView()
                     .blur(radius: showNewtaskItem ? 8 : 0, opaque: false)
             )
-            .background(backgroundGrient.ignoresSafeArea(.all))
+            .background(backgroundGradient.ignoresSafeArea(.all))
         } //: NAVIGATION
         .navigationViewStyle(StackNavigationViewStyle())
     }

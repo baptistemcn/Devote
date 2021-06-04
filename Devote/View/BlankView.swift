@@ -30,6 +30,6 @@ struct BlankView_Previews: PreviewProvider {
     static var previews: some View {
         BlankView(backgroudColor: Color.black, backgroundOpacity: 0.3)
             .background(BackgroundImageView())
-            .background(backgroundGrient.ignoresSafeArea(.all))
+            .background(backgroundGradient.ignoresSafeArea(.all))
     }
 }
